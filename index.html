@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everse Legend - Server Minecraft Indonesia</title>
+    
+    <meta property="og:title" content="Everse Legend Minecraft Server">
+    <meta property="og:description" content="Server Anti Abuse, Custom World & Senjata Legend Gratis! Join: mc.everse.my.id">
+    <meta property="og:image" content="https://i.imgur.com/f3EQsXH.png">
+    <meta property="og:url" content="https://mc.everse.my.id">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="https://i.imgur.com/f3EQsXH.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6a0dad; /* Ungu Legend */
+            --secondary: #ffd700; /* Emas */
+            --dark: #0f0f13;
+            --darker: #050507;
+            --card-bg: #1a1a20;
+            --text: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+
+        /* --- Navbar --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center; padding: 15px 5%;
+            background: rgba(0, 0, 0, 0.9); position: fixed; width: 100%; z-index: 1000;
+            backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--secondary); text-transform: uppercase; }
+        .logo img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 100px 20px 50px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1607988795622-44743c5b8509?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+        }
+
+        .hero-logo { width: 150px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; border-radius: 50%; box-shadow: 0 0 20px var(--primary); }
+        
+        .hero h1 {
+            font-size: 3rem; text-transform: uppercase; margin-bottom: 10px;
+            background: -webkit-linear-gradient(var(--secondary), #ff8c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* IP Box Container */
+        .ip-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        
+        .ip-box {
+            background: rgba(0,0,0,0.6); padding: 15px 25px; border-radius: 15px; border: 1px solid var(--primary);
+            cursor: pointer; transition: 0.3s; min-width: 250px;
+        }
+        .ip-box:hover { background: var(--primary); transform: scale(1.05); }
+        .ip-box h3 { font-size: 0.9rem; color: #ccc; margin-bottom: 5px; }
+        .ip-text { font-family: monospace; font-size: 1.2rem; font-weight: bold; color: var(--secondary); }
+        .port { color: #fff; font-size: 0.9rem; }
+
+        /* --- About Section --- */
+        .about { padding: 80px 10%; background: var(--card-bg); text-align: center; }
+        .about p { font-size: 1.1rem; line-height: 1.8; color: #ddd; max-width: 800px; margin: 0 auto; }
+        .features-grid { display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+        .feature-item { width: 200px; }
+        .feature-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+        
+        /* --- Staff Section --- */
+        .staff { padding: 80px 10%; background: var(--darker); text-align: center; }
+        .staff-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        
+        .staff-card {
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;
+            padding: 25px; width: 220px; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .staff-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        
+        .staff-card img { width: 80px; height: 80px; margin-bottom: 15px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+        
+        .role-badge { 
+            display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; 
+        }
+        .role-owner { background: #ff0000; color: white; box-shadow: 0 0 10px #ff0000; }
+        .role-co { background: #ff8c00; color: white; }
+        .role-admin { background: #00eaff; color: black; }
+        .role-staff { background: #00ff00; color: black; }
+
+        /* --- Weapon Section --- */
+        .weapon-feature { padding: 80px 10%; background: linear-gradient(to bottom, var(--dark), var(--card-bg)); text-align: center; }
+        .weapon-box { border: 2px solid var(--secondary); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.1); }
+
+        /* --- Store --- */
+        .store { padding: 80px 10%; background: var(--dark); text-align: center; }
+        .rank-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .rank-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 30px; width: 280px; border-radius: 15px; }
+        .rank-warga { color: #aeff00; } .rank-pejabat { color: #00eaff; } .rank-mentri { color: #ff0055; }
+        .btn-buy { display: block; padding: 10px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+
+        /* Footer */
+        footer { padding: 20px; text-align: center; background: black; color: #555; font-size: 0.8rem; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .ip-container { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="https://i.imgur.com/f3EQsXH.png" alt="Logo"> Everse Legend
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="https://i.imgur.com/f3EQsXH.png" alt="Everse Logo" class="hero-logo">
+        <h1>Everse Legend</h1>
+        <p>Server Minecraft Terbaik dengan Fitur Terlengkap</p>
+        
+        <div class="ip-container">
+            <div class="ip-box" onclick="copyText('mc.everse.my.id', 'IP Java')">
+                <h3><i class="fab fa-java"></i> Java Edition</h3>
+                <div class="ip-text">mc.everse.my.id</div>
+                <div style="font-size: 0.8rem; margin-top: 5px; color: #888;">Klik untuk Salin</div>
+            </div>
+
+            <div class="ip-box" onclick="copyText('mc.everse.my.id', 'IP Bedrock')">
+                <h3><i class="fas fa-mobile-alt"></i> Bedrock / PE</h3>
+                <div class="ip-text">mc.everse.my.id</div>
+                <div class="port">Port: 19131</div>
+                <div style="font-size: 0.8rem; margin-top: 5px; color: #888;">Klik untuk Salin IP</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--secondary);">TENTANG EVERSE LEGEND</h2>
+        <p>
+            Everse Legend adalah server Minecraft yang memiliki banyak fitur, salah satunya adalah 
+            <b style="color:var(--secondary)">Senjata Legendaris</b> dan <b style="color:var(--secondary)">World Generator Custom</b>. 
+            Di sini kami sangat menyamaratakan member, <b>tidak pilih kasih</b>, dan <b>Anti Admin Abuse</b>. 
+            Server ini dirancang untuk kenyamanan pemain dengan event seru yang diadakan setiap harinya!
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Anti Abuse</h4>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-globe-asia"></i>
+                <h4>Custom World</h4>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-calendar-check"></i>
+                <h4>Daily Event</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="staff">
+        <h2 style="font-size: 2.5rem; margin-bottom: 40px;">PENGURUS INTI</h2>
+        <div class="staff-grid">
+            
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/hann2k" alt="Skin Rehan">
+                <span class="role-badge role-owner">OWNER</span>
+                <h3>Rehan</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: hann2k</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/ryuzii_corleone" alt="Skin Ryuzii">
+                <span class="role-badge role-co">CO-OWNER</span>
+                <h3>Ryuzii</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: ryuzii_corleone</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/TakSukaLah" alt="Skin Rafi">
+                <span class="role-badge role-admin">ADMIN</span>
+                <h3>Rafi</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: TakSukaLah</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/itsmeRasid" alt="Skin Rasid">
+                <span class="role-badge role-admin">ADMIN</span>
+                <h3>Rasid</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: itsmeRasid</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/zanssss" alt="Skin Zans">
+                <span class="role-badge role-admin">ADMIN</span>
+                <h3>Zans</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: zanssss</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://mc-heads.net/avatar/yinYorou" alt="Skin Yin">
+                <span class="role-badge role-staff">STAFF</span>
+                <h3>Yin</h3>
+                <p style="color:#888; font-size:0.9rem;">Nick: yinYorou</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="weapon-feature">
+        <div class="weapon-box">
+            <i class="fas fa-khanda" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+            <h2>SENJATA LEGEND GRATIS</h2>
+            <p>Login sekarang dan klaim senjata legendaris kamu secara gratis tanpa syarat!</p>
+        </div>
+    </section>
+
+    <section class="store">
+        <h2 style="margin-bottom: 40px;">TOKO SERVER</h2>
+        <div class="rank-container">
+            <div class="rank-card">
+                <h3 class="rank-warga">WARGA</h3>
+                <h1 style="margin:10px 0;">Rp 2.000</h1>
+                <p style="color:#ccc; font-size:0.9rem;">Prefix Keren, Kit Starter</p>
+                <a href="https://wa.me/6283142474788?text=Halo%20Admin,%20mau%20beli%20rank%20WARGA" class="btn-buy">Beli Sekarang</a>
+            </div>
+            <div class="rank-card" style="border-color:var(--secondary); transform:scale(1.05);">
+                <h3 class="rank-pejabat">PEJABAT</h3>
+                <h1 style="margin:10px 0; color:var(--secondary);">Rp 8.000</h1>
+                <p style="color:#ccc; font-size:0.9rem;">Fly, Kit OP, Feed</p>
+                <a href="https://wa.me/6283142474788?text=Halo%20Admin,%20mau%20beli%20rank%20PEJABAT" class="btn-buy">Beli Sekarang</a>
+            </div>
+            <div class="rank-card">
+                <h3 class="rank-mentri">MENTRI</h3>
+                <h1 style="margin:10px 0;">Rp 10.000</h1>
+                <p style="color:#ccc; font-size:0.9rem;">Repair, Special Armor</p>
+                <a href="https://wa.me/6283142474788?text=Halo%20Admin,%20mau%20beli%20rank%20MENTRI" class="btn-buy">Beli Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Everse Legend. Developed by Everse Team.</p>
+    </footer>
+
+    <script>
+        function copyText(text, label) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(label + " berhasil disalin: " + text);
+            }).catch(err => {
+                console.error('Gagal menyalin', err);
+            });
+        }
+    </script>
+</body>
+</html>
