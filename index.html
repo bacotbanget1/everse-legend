@@ -4,85 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EverseID - Minecraft Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #00d4ff;
             --accent-red: #ff4d4d;
-            --dark-bg: #0f0f1a;
-            --card-bg: #1a1a2e;
+            --dark-bg: #0a0a12;
+            --card-bg: rgba(26, 26, 46, 0.8);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--dark-bg);
+            background-image: radial-gradient(circle at top right, #1a1a2e 0%, #0a0a12 100%);
             color: white;
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Intro --- */
+        header {
+            padding: 80px 20px 40px;
             text-align: center;
         }
 
-        header {
-            padding: 50px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(15,15,26,1)), url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        .main-logo {
+            width: 220px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+            animation: float 4s ease-in-out infinite;
         }
 
-        .main-logo {
-            width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px var(--primary-blue));
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         .intro-section {
-            max-width: 800px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
         .intro-section h1 {
+            font-family: 'Montserrat', sans-serif;
             color: var(--primary-blue);
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .intro-section p {
             font-size: 1.1em;
-            color: #ccc;
+            color: #bdc3c7;
+            margin-bottom: 15px;
         }
 
-        /* Container Tombol Game Mode */
+        .highlight {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        /* --- Server Grid --- */
         .server-grid {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
-            padding-bottom: 80px;
+            gap: 25px;
+            padding: 60px 20px 100px;
         }
 
-        /* Styling Tombol Gambar */
         .server-button {
             position: relative;
-            width: 90%;
-            max-width: 600px;
-            height: 150px;
-            border-radius: 15px;
+            width: 100%;
+            max-width: 700px;
+            height: 180px;
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .server-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
             border-color: var(--primary-blue);
         }
 
-        /* Background Gambar di dalam tombol */
         .btn-bg {
             position: absolute;
             top: 0;
@@ -91,41 +118,79 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            filter: brightness(0.5); /* Membuat teks lebih terbaca */
+            filter: brightness(0.4) saturate(1.2);
+            transition: transform 0.8s ease;
             z-index: 1;
         }
 
-        /* Logo kecil di pojok kiri atas tombol */
+        .server-button:hover .btn-bg {
+            transform: scale(1.1);
+            filter: brightness(0.6) saturate(1.5);
+        }
+
         .btn-logo {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 45px; /* Dikecilkan sesuai permintaan */
+            top: 20px;
+            left: 25px;
+            width: 55px;
             height: auto;
             z-index: 3;
-            filter: drop-shadow(2px 2px 5px black);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
         }
 
         .btn-text {
             position: relative;
             z-index: 2;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
             color: white;
+            text-align: center;
+            padding: 0 20px;
         }
 
-        /* Background Khusus Tombol (Placeholder gambar deskripsi Anda) */
-        .bg-eam { background-image: url('https://img.freepik.com/free-photo/minecraft-construction-with-characters_23-2151745422.jpg'); } /* Ganti dengan gambar player tembak-tembakan */
-        .bg-hero { background-image: url('https://img.freepik.com/free-photo/minecraft-character-fighting_23-2151745428.jpg'); } /* Ganti dengan gambar Hero vs Villain */
-        .bg-hardcore { background-image: url('https://img.freepik.com/free-photo/minecraft-battle-scene_23-2151745435.jpg'); } /* Ganti dengan gambar duel sword */
+        /* Border Glow Effect */
+        .server-button::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px; 
+            background: linear-gradient(45deg, transparent, var(--primary-blue), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .server-button:hover::after {
+            opacity: 1;
+        }
+
+        /* --- Backgrounds --- */
+        .bg-eam { background-image: url('https://img.freepik.com/free-photo/minecraft-construction-with-characters_23-2151745422.jpg'); }
+        .bg-hero { background-image: url('https://img.freepik.com/free-photo/minecraft-character-fighting_23-2151745428.jpg'); }
+        .bg-hardcore { background-image: url('https://img.freepik.com/free-photo/minecraft-battle-scene_23-2151745435.jpg'); }
 
         footer {
-            padding: 20px;
-            background: #0a0a14;
-            color: #666;
+            padding: 40px 20px;
+            background: #05050a;
+            color: #555;
             font-size: 0.9em;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 600px) {
+            .intro-section h1 { font-size: 1.8em; }
+            .btn-text { font-size: 1.3em; }
+            .server-button { height: 140px; }
+            .btn-logo { width: 40px; left: 15px; top: 15px; }
         }
     </style>
 </head>
@@ -137,39 +202,38 @@
         <div class="intro-section">
             <h1>Tentang EverseID</h1>
             <p>
-                <strong>EverseID</strong> adalah komunitas Minecraft baru yang menjunjung tinggi keramahan antar member, 
-                memiliki jajaran admin yang baik, serta menciptakan lingkungan yang <strong>anti-toxic</strong>.
+                <span class="highlight">EverseID</span> adalah komunitas Minecraft modern yang menjunjung tinggi keramahan, 
+                keadilan admin, serta lingkungan yang <span class="highlight">Anti-Toxic</span>.
             </p>
             <p>
-                Sebelumnya kami dikenal dengan nama <strong>SnowSMP</strong>. Namun, karena nama tersebut sudah banyak digunakan, 
-                kami bertransformasi menjadi <strong>EverseID</strong>. Nama ini menegaskan bahwa kami bukan sekadar server satuan, 
-                melainkan sebuah <strong>Community</strong> di mana server-server kami berdiri kuat karena dukungan komunitasnya.
+                Bermula dari <strong>SnowSMP</strong>, kami berevolusi menjadi <strong>EverseID Community</strong>. 
+                Kami bukan hanya sebuah server, melainkan ekosistem bagi para pemain untuk berkembang dan menjalin pertemanan sejati.
             </p>
         </div>
     </header>
 
-    <div class="server-grid">
+    <main class="server-grid">
         <a href="eam.html" class="server-button">
             <div class="btn-bg bg-eam"></div>
-            <img src="eam.png" alt="Logo E" class="btn-logo">
-            <div class="btn-text">EAM (EVERSE ANARCHY MODE)</div>
+            <img src="eam.png" alt="EAM Logo" class="btn-logo">
+            <div class="btn-text">EAM: ANARCHY MODE</div>
         </a>
 
         <a href="hero.html" class="server-button">
             <div class="btn-bg bg-hero"></div>
-            <img src="hero.png" alt="Logo Hero" class="btn-logo">
+            <img src="hero.png" alt="Hero Logo" class="btn-logo">
             <div class="btn-text">EVERSE HERO</div>
         </a>
 
         <a href="hardcore.html" class="server-button">
             <div class="btn-bg bg-hardcore"></div>
-            <img src="hardcore.png" alt="HARDCORE LOGO" class="btn-logo">
+            <img src="hardcore.png" alt="Hardcore Logo" class="btn-logo">
             <div class="btn-text">EVERSE HARDCORE</div>
         </a>
-    </div>
+    </main>
 
     <footer>
-        &copy; 2024 EverseID Community. All Rights Reserved.
+        <p>&copy; 2026 EverseID Community. Developed for the Community.</p>
     </footer>
 
 </body>
