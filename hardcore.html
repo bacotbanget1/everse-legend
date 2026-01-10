@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everse Hardcore - Survival of the Fittest | EverseID</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hardcore-red: #8b0000;
+            --blood-red: #ff0000;
+            --dark-bg: #050000;
+            --card-bg: rgba(20, 5, 5, 0.95);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            /* Background bertema pertempuran pedang/gelap */
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                              url('https://w0.peakpx.com/wallpaper/324/110/HD-wallpaper-minecraft-hardcore-thumbnail.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 10px; /* Lebih kotak untuk kesan tegas/hardcore */
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--blood-red);
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .status-on {
+            background: #00ff00;
+            color: black;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .logo-e {
+            width: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--hardcore-red));
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: var(--blood-red);
+            letter-spacing: 2px;
+        }
+
+        .warning-text {
+            color: #ff4d4d;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* Mekanisme Ban List */
+        .ban-mechanic {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px dashed #444;
+        }
+
+        .ban-mechanic h3 { margin-bottom: 10px; color: #fff; }
+
+        /* Fitur Khusus */
+        .custom-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .join-btn {
+            background: var(--blood-red);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 5px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .join-btn:hover {
+            background: #ff0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { color: white; }
+
+        @media (max-width: 600px) {
+            .custom-feature { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="status-on">SERVER ONLINE</span>
+        
+        <img src="Gemini_Generated_Image_jr8peejr8peejr8p-removebg-preview.png" alt="Logo E" class="logo-e">
+
+        <h1>EVERSE HARDCORE</h1>
+        <p class="warning-text">"Lebih Kejam dari Anarchy, Lebih Nyata dari Roleplay"</p>
+        
+        <p class="description">
+            Selamat datang di neraka EverseID. Di sini, kebebasan adalah kutukan. Kamu bebas membunuh, bebas menghancurkan (Griefing), namun kamu tetap terikat dalam nuansa Roleplay yang kejam. Dengan sistem <strong>Random Spawn</strong>, kamu tidak akan pernah tahu di mana perjalananmu dimulai.
+        </p>
+
+        <div class="ban-mechanic">
+            <h3>⚠️ KONSEKUENSI KEMATIAN</h3>
+            <p style="font-size: 0.9rem; color: #bbb;">Setiap kematian akan menambah masa hukuman ban secara akumulatif:</p>
+            <p style="margin-top: 10px; font-weight: 600; color: #ff4d4d;">
+                1× Mati: Ban 2 Jam | 2× Mati: Ban 4 Jam | Seterusnya (+2 Jam)
+            </p>
+        </div>
+
+        <div class="custom-feature">
+            <div class="feature-item">⚔️ <strong>Custom Weapon Models</strong><br>Ubah nama senjatamu dan gunakan Texture Pack khusus kami untuk model yang lebih keren!</div>
+            <div class="feature-item">🎲 <strong>Random Spawn</strong><br>Tidak ada titik aman. Setiap pemain berpencar di seluruh penjuru map.</div>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://chat.whatsapp.com/EoHINrtkCQ377U0nYjL1WP" class="join-btn" target="_blank">Daftar Sekarang (WhatsApp Group)</a>
+            <a href="index.html" class="back-link">Kembali ke Beranda EverseID</a>
+        </div>
+    </div>
+
+</body>
+</html>
