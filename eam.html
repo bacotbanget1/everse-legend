@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAM - Everse Anarchy Mode | EverseID</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gta-orange: #ff9d00;
+            --gta-blue: #00d4ff;
+            --danger-red: #ff4d4d;
+            --dark-bg: #0a0a0f;
+            --card-bg: rgba(20, 20, 30, 0.9);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                              url('https://img.freepik.com/free-photo/minecraft-construction-with-characters_23-2151745422.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Status Server Ditutup */
+        .status-badge {
+            background: var(--danger-red);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .logo-e {
+            width: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px var(--danger-red));
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--gta-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Grid Fitur */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--gta-blue);
+        }
+
+        /* Tombol Kembali */
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+        }
+
+        /* Particle Overlay untuk kesan debu/arsip */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.2;
+        }
+
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            .container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="overlay"></div>
+        
+        <img src="Gemini_Generated_Image_jr8peejr8peejr8p-removebg-preview.png" alt="Logo E" class="logo-e">
+        
+        <div>
+            <span class="status-badge">Server Closed / Offline</span>
+        </div>
+
+        <h1>Everse Anarchy Mode (EAM)</h1>
+        
+        <p class="description">
+            <strong>EAM</strong> merupakan proyek legendaris dari EverseID yang membawa pengalaman 
+            <strong>GTA 5 Roleplay</strong> ke dalam dunia Minecraft. Di sini, pemain bisa menjalani kehidupan simulasi 
+            dengan tingkat kebebasan yang tinggi (Anarchy) namun tetap terikat dalam nuansa Roleplay yang kental.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-item">🔫 Senjata Api Custom</div>
+            <div class="feature-item">🎙️ Voice Chat Roleplay</div>
+            <div class="feature-item">🏎️ Kendaraan & Mobil</div>
+            <div class="feature-item">💰 Sistem Ekonomi & Gang</div>
+            <div class="feature-item">🏙️ Map Modern City</div>
+            <div class="feature-item">🎭 Real-Life Interaction</div>
+        </div>
+
+        <p style="margin-bottom: 30px; font-style: italic; color: #888;">
+            Terima kasih kepada seluruh pemain yang telah berpartisipasi dalam sejarah EAM. 
+            Saat ini server telah resmi ditutup untuk fokus pada pengembangan proyek komunitas lainnya.
+        </p>
+
+        <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+    </div>
+
+</body>
+</html>
