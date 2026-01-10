@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everse Hero - Roleplay | EverseID</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hero-blue: #0084ff;
+            --villain-purple: #9d00ff;
+            --danger-red: #ff4d4d;
+            --dark-bg: #050508;
+            --card-bg: rgba(15, 15, 25, 0.95);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            /* Background bertema pertempuran hero */
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                              url('https://wallpaperaccess.com/full/1511933.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 132, 255, 0.2);
+            position: relative;
+        }
+
+        /* Banner Status Tutup */
+        .closed-banner {
+            position: absolute;
+            top: 40px;
+            right: -30px;
+            background: var(--danger-red);
+            color: white;
+            padding: 10px 40px;
+            transform: rotate(15deg);
+            font-weight: 900;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .logo-e {
+            width: 90px;
+            filter: drop-shadow(0 0 15px var(--hero-blue));
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 15px var(--hero-blue)); }
+            50% { filter: drop-shadow(0 0 30px var(--villain-purple)); }
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, var(--hero-blue), #fff, var(--villain-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            color: #bdc3c7;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* Fitur List dengan Gaya Komik */
+        .feature-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.05);
+            padding: 12px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 132, 255, 0.3);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--hero-blue);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .info-status {
+            background: rgba(255, 77, 77, 0.1);
+            border: 1px solid var(--danger-red);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, var(--hero-blue), var(--villain-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(157, 0, 255, 0.3);
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 30px 20px; }
+            .closed-banner { top: 20px; right: -40px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="closed-banner">OFFLINE</div>
+        
+        <div class="logo-container">
+            <img src="Gemini_Generated_Image_jr8peejr8peejr8p-removebg-preview.png" alt="Logo E" class="logo-e">
+        </div>
+
+        <h1>Everse Hero</h1>
+        
+        <p class="description">
+            Pilih takdirmu: Menjadi pelindung kota sebagai <strong>Hero</strong> atau menguasai kegelapan sebagai <strong>Villain</strong>. 
+            Everse Hero menyajikan pengalaman Roleplay Minecraft yang imersif dengan kekuatan super yang luar biasa.
+        </p>
+
+        <div class="feature-box">
+            <div class="tag">🦸 Kostum Super Hero</div>
+            <div class="tag">🦹 Kostum Villain</div>
+            <div class="tag">🏎️ Kendaraan Spesial</div>
+            <div class="tag">🎭 Epic Roleplay</div>
+            <div class="tag">💥 Super Power Skills</div>
+        </div>
+
+        <div class="info-status">
+            <p style="color: var(--danger-red); font-weight: 700; margin-bottom: 5px;">PENGUMUMAN</p>
+            <p style="font-size: 0.9rem; color: #aaa;">
+                Sayangnya, perjalanan pahlawan kita telah berakhir. Server Everse Hero saat ini sudah <strong>tidak aktif lagi (DITUTUP)</strong>. 
+                Kenangan pertempuran antara Hero dan Villain akan selalu abadi di komunitas ini.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-btn">Kembali ke Home</a>
+    </div>
+
+</body>
+</html>
