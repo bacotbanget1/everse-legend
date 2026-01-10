@@ -3,732 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta property="og:title" content="Everse Legend - Minecraft Server">
-    <meta property="og:description" content="Gabung sekarang! Server Survival dengan Senjata Legendaris Custom. Java & Bedrock Support.">
-    <meta property="og:image" content="https://i.imgur.com/Jquopfg.png">
-    <meta property="og:url" content="https://mc.everse.my.id">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#6c5ce7">
-
-    <title>Everse Legend | Minecraft Server</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <title>EverseID - Minecraft Community</title>
     <style>
-        /* --- RESET & DASAR --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-blue: #00d4ff;
+            --accent-red: #ff4d4d;
+            --dark-bg: #0f0f1a;
+            --card-bg: #1a1a2e;
         }
 
         body {
-            background-color: #0f0f13;
-            background-image: radial-gradient(circle at 50% 50%, #1e1e2f 0%, #0f0f13 100%);
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
             text-align: center;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            margin: 10px;
-        }
-
-        /* --- HERO SECTION --- */
         header {
-            padding: 60px 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .logo-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #6c5ce7;
-            box-shadow: 0 0 30px rgba(108, 92, 231, 0.5);
-            margin-bottom: 20px;
-            object-fit: cover;
-            animation: pulse-glow 3s infinite alternate;
-        }
-
-        h1 {
-            font-family: 'Press Start 2P', cursive; /* Font Gaming Pixel */
-            font-size: 2rem;
-            color: #a29bfe;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 0px #2d3436;
-            line-height: 1.5;
-        }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #dfe6e9;
-            margin-bottom: 30px;
-        }
-
-        /* --- IP SECTION --- */
-        .ip-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .ip-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            width: 300px;
-            transition: transform 0.3s;
-            position: relative;
-        }
-
-        .ip-card:hover {
-            transform: translateY(-5px);
-            border-color: #6c5ce7;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
-        }
-
-        .platform-badge {
-            background: #6c5ce7;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        .platform-badge.bedrock {
-            background: #00b894;
-        }
-
-        .ip-address {
-            background: #2d3436;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin: 10px 0;
-            color: #fab1a0;
-            border: 1px dashed #636e72;
-        }
-
-        .btn-copy {
-            background: transparent;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 8px 15px;
-            font-size: 0.9rem;
-        }
-
-        .btn-copy:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        /* --- SERVER STATUS SECTION --- */
-        .status-container {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .status-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(108, 92, 231, 0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        .status-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .status-title {
-            font-size: 1.5rem;
-            color: #ffeaa7;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            padding: 5px 12px;
-            border-radius: 20px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .status-online {
-            color: #00b894;
-        }
-
-        .status-offline {
-            color: #d63031;
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .status-online .status-dot {
-            background-color: #00b894;
-            box-shadow: 0 0 10px #00b894;
-        }
-
-        .status-offline .status-dot {
-            background-color: #d63031;
-        }
-
-        .server-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: left;
-        }
-
-        .info-card h4 {
-            color: #a29bfe;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            color: #dfe6e9;
-        }
-
-        .ping-info {
-            color: #55efc4 !important;
-            font-weight: 600;
-        }
-
-        /* --- PLAYER PROGRESS BAR --- */
-        .player-progress-container {
-            margin-top: 15px;
-        }
-
-        .player-count {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: #b2bec3;
-        }
-
-        .player-progress-bar {
-            height: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .player-progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-            border-radius: 6px;
-            width: 0%;
-            transition: width 1s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .player-progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        /* --- MOTD SECTION --- */
-        .motd-container {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
-            text-align: left;
-            border-left: 4px solid #6c5ce7;
-        }
-
-        .motd-title {
-            color: #fdcb6e;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .motd-content {
-            font-family: monospace;
-            color: #dfe6e9;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-
-        /* --- FEATURES SECTION --- */
-        .features {
-            background: rgba(0, 0, 0, 0.3);
             padding: 50px 20px;
-            border-radius: 20px;
-            margin-bottom: 50px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(15,15,26,1)), url('https://www.transparenttextures.com/patterns/dark-matter.png');
         }
 
-        .features h2 {
-            font-size: 1.8rem;
+        .main-logo {
+            width: 250px;
+            height: auto;
             margin-bottom: 20px;
-            color: #ffeaa7;
+            filter: drop-shadow(0 0 10px var(--primary-blue));
         }
 
-        .feature-item {
+        .intro-section {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .intro-section h1 {
+            color: var(--primary-blue);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* Container Tombol Game Mode */
+        .server-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        /* Styling Tombol Gambar */
+        .server-button {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 150px;
+            border-radius: 15px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.1);
         }
 
-        .feature-icon {
-            font-size: 1.5rem;
-            color: #fdcb6e;
+        .server-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+            border-color: var(--primary-blue);
         }
 
-        /* --- WHATSAPP SECTION --- */
-        .cta-section {
-            margin-bottom: 80px;
+        /* Background Gambar di dalam tombol */
+        .btn-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.5); /* Membuat teks lebih terbaca */
+            z-index: 1;
         }
 
-        .btn-wa {
-            background: #25D366;
+        /* Logo kecil di pojok kiri atas tombol */
+        .btn-logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 45px; /* Dikecilkan sesuai permintaan */
+            height: auto;
+            z-index: 3;
+            filter: drop-shadow(2px 2px 5px black);
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 2;
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
             color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .btn-wa:hover {
-            background: #1ebc57;
-            transform: scale(1.05);
-        }
+        /* Background Khusus Tombol (Placeholder gambar deskripsi Anda) */
+        .bg-eam { background-image: url('https://img.freepik.com/free-photo/minecraft-construction-with-characters_23-2151745422.jpg'); } /* Ganti dengan gambar player tembak-tembakan */
+        .bg-hero { background-image: url('https://img.freepik.com/free-photo/minecraft-character-fighting_23-2151745428.jpg'); } /* Ganti dengan gambar Hero vs Villain */
+        .bg-hardcore { background-image: url('https://img.freepik.com/free-photo/minecraft-battle-scene_23-2151745435.jpg'); } /* Ganti dengan gambar duel sword */
 
-        /* --- FOOTER --- */
         footer {
             padding: 20px;
-            font-size: 0.9rem;
-            color: #636e72;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* --- NOTIFIKASI COPY --- */
-        #toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 50px;
-            padding: 16px;
-            position: fixed;
-            z-index: 1;
-            left: 50%;
-            bottom: 30px;
-            transform: translateX(-50%);
-            font-size: 17px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        #toast.show {
-            visibility: visible;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-
-        /* --- ANIMATIONS --- */
-        @keyframes fadein { 
-            from {bottom: 0; opacity: 0;} 
-            to {bottom: 30px; opacity: 1;} 
-        }
-        
-        @keyframes fadeout { 
-            from {bottom: 30px; opacity: 1;} 
-            to {bottom: 0; opacity: 0;} 
-        }
-        
-        @keyframes fadeIn { 
-            from {opacity: 0; transform: translateY(-20px);} 
-            to {opacity: 1; transform: translateY(0);} 
-        }
-        
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(108, 92, 231, 0.8); }
-            100% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.5); }
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
-        }
-        
-        /* --- LOADING ANIMATION --- */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #6c5ce7;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* --- Mobile adjustment --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; }
-            .ip-card, .info-card { width: 100%; }
-            .server-info-grid { grid-template-columns: 1fr; }
-            .status-header { flex-direction: column; gap: 10px; }
+            background: #0a0a14;
+            color: #666;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <img src="https://i.imgur.com/Jquopfg.png" alt="Logo Everse Legend" class="logo-img">
-            <h1>EVERSE LEGEND</h1>
-            <p class="subtitle">Server Minecraft Indonesia dengan Senjata Legendaris!</p>
-        </header>
-
-        <!-- Server Status Section -->
-        <div class="status-container">
-            <div class="status-header">
-                <h3 class="status-title"><i class="fas fa-server"></i> Status Server Live</h3>
-                <div class="status-indicator status-online" id="server-status">
-                    <div class="status-dot"></div>
-                    <span id="status-text">Mengecek...</span>
-                </div>
-            </div>
-            
-            <div class="server-info-grid">
-                <div class="info-card">
-                    <h4><i class="fas fa-users"></i> Pemain Online</h4>
-                    <p><span id="online-players">0</span> / <span id="max-players">0</span></p>
-                    
-                    <div class="player-progress-container">
-                        <div class="player-count">
-                            <span>Pemain Aktif</span>
-                            <span id="player-percentage">0%</span>
-                        </div>
-                        <div class="player-progress-bar">
-                            <div class="player-progress-fill" id="player-progress"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="info-card">
-                    <h4><i class="fas fa-broadcast-tower"></i> Ping / MS</h4>
-                    <p class="ping-info" id="ping-ms">Mengecek...</p>
-                </div>
-                
-                <div class="info-card">
-                    <h4><i class="fas fa-microchip"></i> Versi Server</h4>
-                    <p id="server-version">Mengecek...</p>
-                </div>
-            </div>
-            
-            <div class="motd-container" id="motd-container">
-                <div class="motd-title">
-                    <i class="fas fa-scroll"></i> MOTD Server
-                </div>
-                <div class="motd-content" id="motd-content">
-                    Menghubungi server...
-                </div>
-            </div>
-            
-            <button class="btn btn-copy" onclick="refreshServerStatus()" style="margin-top: 15px;">
-                <i class="fas fa-sync-alt"></i> Refresh Status
-            </button>
+    <header>
+        <img src="logo.jpg" alt="EverseID Logo" class="main-logo">
+        
+        <div class="intro-section">
+            <h1>Tentang EverseID</h1>
+            <p>
+                <strong>EverseID</strong> adalah komunitas Minecraft baru yang menjunjung tinggi keramahan antar member, 
+                memiliki jajaran admin yang baik, serta menciptakan lingkungan yang <strong>anti-toxic</strong>.
+            </p>
+            <p>
+                Sebelumnya kami dikenal dengan nama <strong>SnowSMP</strong>. Namun, karena nama tersebut sudah banyak digunakan, 
+                kami bertransformasi menjadi <strong>EverseID</strong>. Nama ini menegaskan bahwa kami bukan sekadar server satuan, 
+                melainkan sebuah <strong>Community</strong> di mana server-server kami berdiri kuat karena dukungan komunitasnya.
+            </p>
         </div>
+    </header>
 
-        <div class="ip-container">
-            <div class="ip-card">
-                <span class="platform-badge"><i class="fab fa-java"></i> Java Edition</span>
-                <p>Versi: 1.16 - 1.21+</p>
-                <div class="ip-address" id="java-ip">mc.everse.my.id</div>
-                <button class="btn btn-copy" onclick="copyText('mc.everse.my.id')">
-                    <i class="fas fa-copy"></i> Salin IP Java
-                </button>
-            </div>
+    <div class="server-grid">
+        <a href="eam.html" class="server-button">
+            <div class="btn-bg bg-eam"></div>
+            <img src="eam.png" alt="Logo E" class="btn-logo">
+            <div class="btn-text">EAM (EVERSE ANARCHY MODE)</div>
+        </a>
 
-            <div class="ip-card">
-                <span class="platform-badge bedrock"><i class="fas fa-mobile-alt"></i> Bedrock / PE</span>
-                <p>Support MCPE / Win10</p>
-                <div class="ip-address">
-                    IP: mc.everse.my.id<br>
-                    Port: 19131
-                </div>
-                <button class="btn btn-copy" onclick="copyText('bedrock')">
-                    <i class="fas fa-copy"></i> Salin Data Bedrock
-                </button>
-            </div>
-        </div>
+        <a href="hero.html" class="server-button">
+            <div class="btn-bg bg-hero"></div>
+            <img src="hero.png" alt="Logo Hero" class="btn-logo">
+            <div class="btn-text">EVERSE HERO</div>
+        </a>
 
-        <div class="features">
-            <h2><i class="fas fa-dungeon"></i> Fitur Eksklusif</h2>
-            <div class="feature-item">
-                <i class="fas fa-khanda feature-icon"></i>
-                <p><strong>Custom Legendary Weapons:</strong> Senjata dengan skill unik yang hanya ada di sini.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-gem feature-icon"></i>
-                <p><strong>Ekonomi Seimbang:</strong> Sistem trading dan shop yang adil.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-users feature-icon"></i>
-                <p><strong>Komunitas Ramah:</strong> Staff aktif dan player yang solid.</p>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h3>Bergabunglah dengan Komunitas Kami!</h3>
-            <p style="margin-bottom: 20px; color: #b2bec3;">Dapatkan info update dan event terbaru di grup WhatsApp.</p>
-            <a href="https://chat.whatsapp.com/FsyDpczAeHrHb6m8ErIyIK?mode=hqrt2" target="_blank" class="btn btn-wa">
-                <i class="fab fa-whatsapp"></i> Masuk Grup WhatsApp
-            </a>
-        </div>
-
-        <footer>
-            &copy; 2025 Everse Legend Server. All Rights Reserved.
-        </footer>
+        <a href="hardcore.html" class="server-button">
+            <div class="btn-bg bg-hardcore"></div>
+            <img src="hardcore.png" alt="HARDCORE LOGO" class="btn-logo">
+            <div class="btn-text">EVERSE HARDCORE</div>
+        </a>
     </div>
 
-    <div id="toast">IP Berhasil Disalin!</div>
+    <footer>
+        &copy; 2024 EverseID Community. All Rights Reserved.
+    </footer>
 
-    <script>
-        // Konfigurasi server Minecraft
-        const SERVER_IP = "mc.everse.my.id";
-        const SERVER_PORT = 19154;
-        
-        // Status server dari API pihak ketiga
-        const STATUS_API_URL = `https://api.mcsrvstat.us/3/${SERVER_IP}:${SERVER_PORT}`;
-        
-        // Elemen DOM
-        const serverStatusElement = document.getElementById('server-status');
-        const statusTextElement = document.getElementById('status-text');
-        const onlinePlayersElement = document.getElementById('online-players');
-        const maxPlayersElement = document.getElementById('max-players');
-        const playerProgressElement = document.getElementById('player-progress');
-        const playerPercentageElement = document.getElementById('player-percentage');
-        const pingMsElement = document.getElementById('ping-ms');
-        const serverVersionElement = document.getElementById('server-version');
-        const motdContentElement = document.getElementById('motd-content');
-        
-        // Fungsi untuk menyalin teks
-        function copyText(type) {
-            let textToCopy = "";
-            
-            if (type === 'bedrock') {
-                textToCopy = "IP: mc.everse.my.id Port: 19131";
-            } else {
-                textToCopy = type;
-            }
-
-            navigator.clipboard.writeText(textToCopy).then(function() {
-                var x = document.getElementById("toast");
-                x.className = "show";
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-            }, function(err) {
-                console.error('Gagal menyalin: ', err);
-            });
-        }
-        
-        // Fungsi untuk memperbarui status server
-        async function updateServerStatus() {
-            try {
-                // Tampilkan loading
-                statusTextElement.innerHTML = '<span class="loading"></span> Mengecek...';
-                pingMsElement.textContent = "Mengecek...";
-                onlinePlayersElement.textContent = "0";
-                maxPlayersElement.textContent = "0";
-                playerProgressElement.style.width = "0%";
-                playerPercentageElement.textContent = "0%";
-                
-                // Fetch data dari API
-                const response = await fetch(STATUS_API_URL);
-                const data = await response.json();
-                
-                // Cek apakah server online
-                if (data.online) {
-                    // Update status
-                    serverStatusElement.className = "status-indicator status-online";
-                    statusTextElement.innerHTML = '<div class="status-dot"></div> Server Online';
-                    
-                    // Update player count
-                    const onlinePlayers = data.players?.online || 0;
-                    const maxPlayers = data.players?.max || 20;
-                    
-                    onlinePlayersElement.textContent = onlinePlayers;
-                    maxPlayersElement.textContent = maxPlayers;
-                    
-                    // Update progress bar
-                    const percentage = maxPlayers > 0 ? Math.min(100, Math.round((onlinePlayers / maxPlayers) * 100)) : 0;
-                    playerProgressElement.style.width = `${percentage}%`;
-                    playerPercentageElement.textContent = `${percentage}%`;
-                    
-                    // Update versi server
-                    serverVersionElement.textContent = data.version || "Unknown";
-                    
-                    // Update MOTD
-                    if (data.motd?.clean) {
-                        motdContentElement.textContent = Array.isArray(data.motd.clean) 
-                            ? data.motd.clean.join(' ') 
-                            : data.motd.clean;
-                    } else {
-                        motdContentElement.textContent = "Selamat datang di Everse Legend Server!";
-                    }
-                    
-                    // Simulasi ping (karena API tidak menyediakan ping)
-                    const simulatedPing = Math.floor(Math.random() * 100) + 20; // Simulasi antara 20-120ms
-                    pingMsElement.textContent = `${simulatedPing} ms`;
-                    
-                } else {
-                    // Server offline
-                    serverStatusElement.className = "status-indicator status-offline";
-                    statusTextElement.innerHTML = '<div class="status-dot"></div> Server Offline';
-                    
-                    onlinePlayersElement.textContent = "0";
-                    maxPlayersElement.textContent = "0";
-                    playerProgressElement.style.width = "0%";
-                    playerPercentageElement.textContent = "0%";
-                    serverVersionElement.textContent = "Unknown";
-                    pingMsElement.textContent = "N/A";
-                    motdContentElement.textContent = "Server sedang dalam pemeliharaan. Silakan coba lagi nanti.";
-                }
-                
-            } catch (error) {
-                console.error("Error fetching server status:", error);
-                
-                // Fallback ke status offline jika terjadi error
-                serverStatusElement.className = "status-indicator status-offline";
-                statusTextElement.innerHTML = '<div class="status-dot"></div> Tidak Dapat Terhubung';
-                
-                onlinePlayersElement.textContent = "?";
-                maxPlayersElement.textContent = "?";
-                playerProgressElement.style.width = "0%";
-                playerPercentageElement.textContent = "0%";
-                serverVersionElement.textContent = "Unknown";
-                pingMsElement.textContent = "Error";
-                motdContentElement.textContent = "Tidak dapat menghubungi server. Pastikan server sedang berjalan.";
-            }
-        }
-        
-        // Fungsi untuk refresh status
-        function refreshServerStatus() {
-            updateServerStatus();
-        }
-        
-        // Fungsi untuk simulasi status jika API tidak bekerja
-        function simulateServerStatus() {
-            // Status online dengan data contoh
-            serverStatusElement.className = "status-indicator status-online";
-            statusTextElement.innerHTML = '<div class="status-dot"></div> Server Online';
-            
-            const onlinePlayers = 42;
-            const maxPlayers = 100;
-            
-            onlinePlayersElement.textContent = onlinePlayers;
-            maxPlayersElement.textContent = maxPlayers;
-            
-            // Update progress bar
-            const percentage = Math.round((onlinePlayers / maxPlayers) * 100);
-            playerProgressElement.style.width = `${percentage}%`;
-            playerPercentageElement.textContent = `${percentage}%`;
-            
-            serverVersionElement.textContent = "1.20.4";
-            pingMsElement.textContent = "45 ms";
-            motdContentElement.textContent = "§6Everse Legend Server §f| §aCustom Weapons §f| §bSurvival Economy";
-        }
-        
-        // Cek apakah API dapat diakses, jika tidak gunakan simulasi
-        async function checkAPI() {
-            try {
-                const response = await fetch(STATUS_API_URL);
-                if (response.ok) {
-                    updateServerStatus();
-                } else {
-                    simulateServerStatus();
-                }
-            } catch (error) {
-                simulateServerStatus();
-            }
-        }
-        
-        // Inisialisasi saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', function() {
-            checkAPI();
-            
-            // Auto-refresh setiap 60 detik
-            setInterval(checkAPI, 60000);
-        });
-    </script>
 </body>
 </html>
